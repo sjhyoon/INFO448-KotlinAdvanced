@@ -6,6 +6,7 @@ package edu.uw.complexkotlin
 import kotlin.test.*
 
 class LibraryTest {
+    //Edited the fizzbuzz functions that can also return "DOH" for numbs divisible by 7
     @Test fun fizzbuzzToTwo() {
         assertEquals("", fizzbuzz(1..2))
     }
@@ -16,13 +17,24 @@ class LibraryTest {
         assertEquals("FIZZBUZZFIZZ", fizzbuzz(1..6))
     }
     @Test fun fizzbuzzToTwelve() {
-        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZ", fizzbuzz(1..12))
+        assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZ", fizzbuzz(1..12))
     }
     @Test fun fizzbuzzToFifteen() {
-        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZ", fizzbuzz(1..15))
+        assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZ", fizzbuzz(1..15))
     }
+    //Added one more test for "FIZZDOH" at 21st
+    @Test fun fizzbuzzToTwentyOne() {
+        assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZFIZZDOH", fizzbuzz(1..21))
+    }
+
     // Fizzbuzz to 25 should equal "FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZ"
+    @Test fun fizzbuzzToTwentyFive() {
+         assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZFIZZDOHFIZZBUZZ", fizzbuzz(1..25))
+    }
     // Fizzbuzz to 50 should equal "FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZ"
+    @Test fun fizzbuzzToFifty() {
+         assertEquals("FIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZFIZZDOHFIZZBUZZFIZZDOHFIZZBUZZFIZZBUZZDOHFIZZFIZZBUZZFIZZDOHFIZZBUZZFIZZDOHBUZZ", fizzbuzz(1..50))
+    }
 
     //@Test fun fizzbuzzgenToFifteen() {
     //    val fb = fizzbuzzgen(mapOf(3 to "FIZZ", 5 to "BUZZ"))
